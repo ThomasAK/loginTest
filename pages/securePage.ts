@@ -19,7 +19,7 @@ export class SecurePage {
     }
 
     async verifyLoginSuccess(){
-        await expect(this.page).toHaveURL(this.url);
+        await expect(this.page, 'Failed to log in.').toHaveURL(this.url);
         await expect(this.alert).toContainText("You logged into a secure area!")
     }
 
